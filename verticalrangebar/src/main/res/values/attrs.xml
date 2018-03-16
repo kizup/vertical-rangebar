@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="VerticalRangeBar">
+        <attr name="startProgress" format="integer">0</attr>
+        <attr name="endProgress" format="integer">100</attr>
+        <attr name="hintColor" format="color"/>
+        <attr name="startThumbColor" format="color"/>
+        <attr name="endThumbColor" format="color"/>
+        <attr name="disableLineColor" format="color" />
+        <attr name="lineColor" format="color" />
+    </declare-styleable>
+
+</resources>

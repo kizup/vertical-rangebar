@@ -1,7 +1,6 @@
-package ru.kizup.verticalrangebardemo;
+package ru.kizup.verticalrangebar;
 
 import android.graphics.Rect;
-import android.util.Log;
 
 /**
  * Created by: dpuzikov on 15.03.18.
@@ -19,7 +18,7 @@ public class Thumb {
     private VerticalRangeBar view;
     private boolean isStartThumb;
 
-    public Thumb(int centerX, int centerY, int size, VerticalRangeBar verticalRangeBar, boolean isStartThumb) {
+    Thumb(int centerX, int centerY, int size, VerticalRangeBar verticalRangeBar, boolean isStartThumb) {
         this.centerX = centerX;
         this.centerY = centerY;
         this.size = size;
@@ -29,7 +28,7 @@ public class Thumb {
         setRect();
     }
 
-    public boolean contains(int x, int y) {
+    boolean contains(int x, int y) {
         return rect.contains(x, y);
     }
 
@@ -38,29 +37,28 @@ public class Thumb {
         rect.set(centerX - halfSize, centerY - halfSize, centerX + halfSize, centerY + halfSize);
     }
 
-    public int getCenterX() {
+    int getCenterX() {
         return centerX;
     }
 
-    public void setCenterX(int centerX) {
+    void setCenterX(int centerX) {
         this.centerX = centerX;
         setRect();
     }
 
-    public int getCenterY() {
+    int getCenterY() {
         return centerY;
     }
 
-    public void setCenterY(int centerY) {
+    void setCenterY(int centerY) {
         this.centerY = centerY;
         int padding = isStartThumb ? view.getPaddingTop() : view.getPaddingBottom();
         float value = ((float) (centerY - padding) / view.getStepPx());
-        Log.d("VerticalRangeBar", "Value -> " + value);
         this.value = Math.round(value);
         setRect();
     }
 
-    public Rect getRect() {
+    Rect getRect() {
         return rect;
     }
 
@@ -68,8 +66,15 @@ public class Thumb {
         this.rect = rect;
     }
 
-    public int getValue() {
+    int getValue() {
         return value;
+    }
+
+    void setValue(int value) {
+        this.value = value;
+        int offset = isStartThumb ? view.getPaddingTop() : view.getPaddingBottom();
+        int y = (int) (view.getStepPx() * value) + offset;
+        setCenterY(y);
     }
 
     void decrease() {
@@ -78,13 +83,5 @@ public class Thumb {
 
     void increase() {
         setValue(value + 1);
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-        int offset = isStartThumb ? view.getPaddingTop() : view.getPaddingBottom();
-        int y = (int) (view.getStepPx() * value) + offset;
-//        Log.d("VerticalRangeBar", "centerY -> " + y);
-        setCenterY(y);
     }
 }

@@ -7,45 +7,43 @@
     tools:context="ru.kizup.verticalrangebardemo.MainActivity">
 
     <Button
-        android:text="+1"
-        tools:visibility="invisible"
         android:id="@+id/plus"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="+1" />
+
     <Button
-        android:text="-1"
-        tools:visibility="invisible"
-        android:layout_gravity="end"
         android:id="@+id/minus"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="-1" />
 
     <Button
-        android:text="+1"
         android:id="@+id/plus_end"
-        tools:visibility="invisible"
-        android:layout_gravity="bottom"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="+1" />
+
     <Button
-        android:text="-1"
-        android:layout_gravity="end|bottom"
-        tools:visibility="invisible"
         android:id="@+id/minus_end"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:text="-1" />
 
-    <ru.kizup.verticalrangebardemo.VerticalRangeBar
-        android:padding="32dp"
-        android:layout_margin="32dp"
-        app:startProgress="100"
-        app:endProgress="30"
-        app:disableLineColor="@color/colorPrimaryDark"
-        app:startThumbColor="@color/colorAccent"
-        app:endThumbColor="@color/colorAccent"
-        app:lineColor="@color/colorAccent"
+    <ru.kizup.verticalrangebar.VerticalRangeBar
         android:id="@+id/range_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_margin="32dp"
+        android:padding="32dp"
+        app:disableLineColor="@color/colorPrimaryDark"
+        app:endProgress="30"
+        app:endThumbColor="@color/colorAccent"
+        app:lineColor="@color/colorAccent"
+        app:startProgress="80"
+        app:startThumbColor="@color/colorAccent" />
 
 </FrameLayout>

@@ -1,4 +1,4 @@
-package ru.kizup.verticalrangebardemo;
+package ru.kizup.verticalrangebar;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,7 +10,6 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 

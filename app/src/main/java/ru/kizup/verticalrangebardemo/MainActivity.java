@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import ru.kizup.verticalrangebar.VerticalRangeBar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
